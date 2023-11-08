@@ -38,9 +38,10 @@ public class SomeServiceTest {
     @ValueSource(ints = {1,7,11,17,22})
     void multipleThreeNotFiveReturnsNumber(int i) {
         assertThat(someService.fizzBuzz(i)).isEqualTo(String.valueOf(i));
-//        assertThat(someService.fizzBuzz(11)).isEqualTo("11");
     }
 
+
+    // 3.2.
     @Test
     void checkFirstLast6IsTrue() {
         assertTrue(someService.firstLast6(new int[]{6, 2, 3}));
@@ -54,6 +55,7 @@ public class SomeServiceTest {
     }
 
 
+    // 3.3.
     @ParameterizedTest
     @CsvSource({
             "2000.0,50,1000",
@@ -83,6 +85,8 @@ public class SomeServiceTest {
                 .hasMessage("Скидка должна быть в диапазоне от 0 до 100%"); // процент скидки больше 100%
     }
 
+
+    // 3.4.
     @Test
     void checkLuckySumWithoutThirteen() {
         assertEquals(13, someService.luckySum(1, 4, 8));

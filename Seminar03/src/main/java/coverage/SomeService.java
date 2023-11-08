@@ -22,10 +22,7 @@ public class SomeService {
      * 3.2. Метод возвращает true для массивов, которые начинаются или заканчиваются 6, и false - если 6 нет ни в начале ни в конце массива
      */
     public boolean firstLast6(int[] nums) {
-        if (nums[0] == 6 || nums[nums.length - 1] == 6) {
-            return true;
-        }
-        return false;
+        return nums[0] == 6 || nums[nums.length - 1] == 6;
     }
 
 
