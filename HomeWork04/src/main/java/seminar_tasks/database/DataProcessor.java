@@ -1,4 +1,4 @@
-package database;
+package seminar_tasks.database;
 
 import java.util.List;
 
