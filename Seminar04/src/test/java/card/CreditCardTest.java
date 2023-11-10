@@ -2,7 +2,6 @@ package card;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.internal.matchers.Null;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;

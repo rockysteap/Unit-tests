@@ -18,22 +18,23 @@ class BookingServiceTest {
 
         when(hotelService.isRoomAvailable(anyInt())).thenReturn(true, false);
 
-        assertTrue(hotelService.isRoomAvailable(0));
-        assertFalse(hotelService.isRoomAvailable(0));
+        assertTrue(bookingService.bookRoom(0));
+        assertFalse(bookingService.bookRoom(0));
     }
 
+    // Решение от преподавателя
     @Test
-    void test(){
-        HotelService g = mock(HotelService.class);
-        BookingService b = new BookingService(g);
-        when(g.isRoomAvailable(anyInt()))
-                .thenAnswer(inv->{
-                    int roomNumber= inv.getArgument(0);
-                    return roomNumber%2==0;
+    void testBookingService() {
+        HotelService hotelService = mock(HotelService.class);
+        BookingService bookingService = new BookingService(hotelService);
+        when(hotelService.isRoomAvailable(anyInt()))
+                .thenAnswer(inv -> {
+                    int roomNumber = inv.getArgument(0);
+                    return roomNumber % 2 == 0;
                 });
 
-        assertTrue(b.bookRoom(2));
-        assertFalse(b.bookRoom(1));
+        assertTrue(bookingService.bookRoom(2));
+        assertFalse(bookingService.bookRoom(1));
     }
 
 }
